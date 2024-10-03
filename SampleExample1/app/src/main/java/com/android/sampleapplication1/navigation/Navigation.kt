@@ -5,6 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.android.sampleapplication1.Screen
+import com.android.sampleapplication1.screens.DashBoardScreen
 import com.android.sampleapplication1.screens.LandingScreen
 
 @Composable
@@ -15,7 +16,7 @@ fun Navigation(){
             LandingScreen(navController)
         }
         composable(route = Screen.Dashboard.route) {
-
+           DashBoardScreen(navController)
         }
         composable(route = Screen.Product.route) {
 
