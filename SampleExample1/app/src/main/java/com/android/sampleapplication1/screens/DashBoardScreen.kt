@@ -126,7 +126,7 @@ fun DashBoardScreen(navController: NavController) {
                         image = R.drawable.pexels_keith_pottinger,
                         name = "Summer Shirt",
                         price = 345f,
-                        modifier = Modifier.padding(end = 16.dp, top = 40.dp),
+                        modifier = Modifier.padding(end = 16.dp, top = 30.dp),
                         navController = navController
                     )
                 }
@@ -135,7 +135,7 @@ fun DashBoardScreen(navController: NavController) {
                         image = R.drawable.pexels_mfooladi,
                         name = "Winter Shirt",
                         price = 345f,
-                        modifier = Modifier.padding(end = 16.dp, top = 40.dp),
+                        modifier = Modifier.padding(end = 16.dp, top = 30.dp),
                         navController = navController
                     )
                 }
@@ -144,7 +144,7 @@ fun DashBoardScreen(navController: NavController) {
                         image = R.drawable.pexels,
                         name = "Autumn Shirt",
                         price = 345f,
-                        modifier = Modifier.padding(end = 16.dp, top = 40.dp),
+                        modifier = Modifier.padding(end = 16.dp, top = 30.dp),
                         navController = navController
                     )
                 }
@@ -153,7 +153,7 @@ fun DashBoardScreen(navController: NavController) {
                         image = R.drawable.pexels_jeff_denlea,
                         name = "Cold Shirt",
                         price = 345f,
-                        modifier = Modifier.padding(end = 16.dp, top = 40.dp),
+                        modifier = Modifier.padding(end = 16.dp, top = 30.dp),
                         navController = navController
                     )
                 }
@@ -162,7 +162,7 @@ fun DashBoardScreen(navController: NavController) {
                         image = R.drawable.pexels_keith_pottinger,
                         name = "Indian Shirt",
                         price = 345f,
-                        modifier = Modifier.padding(end = 16.dp, top = 40.dp),
+                        modifier = Modifier.padding(end = 16.dp, top = 30.dp),
                         navController = navController
                     )
                 }
@@ -171,7 +171,7 @@ fun DashBoardScreen(navController: NavController) {
                         image = R.drawable.pexels_boris_ivas,
                         name = "Nepal Shirt",
                         price = 345f,
-                        modifier = Modifier.padding(end = 16.dp, top = 40.dp),
+                        modifier = Modifier.padding(end = 16.dp, top = 30.dp),
                         navController = navController
                     )
                 }
@@ -200,8 +200,8 @@ fun ProductView(
                 navController.navigate(Screen.Product.route)
             }
             .border(
-                width = 2.dp,
-                color = Color.Gray,
+                width = 1.dp,
+                color = Color.Red,
                 shape = RoundedCornerShape(topStart = 20.dp)
             ),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
