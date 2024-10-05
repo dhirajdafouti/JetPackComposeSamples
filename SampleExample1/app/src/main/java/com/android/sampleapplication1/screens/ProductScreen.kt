@@ -30,7 +30,6 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.android.sampleapplication1.R
-import kotlinx.coroutines.flow.MutableStateFlow
 
 @Composable
 
@@ -88,7 +87,7 @@ fun ProductScreen(navController: NavController) {
                         .aspectRatio(1f)
                         .clip(shape = CircleShape)
                 )
-                
+
             }
         }
 
