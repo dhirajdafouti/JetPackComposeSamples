@@ -8,7 +8,9 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -18,10 +20,18 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.AccountCircle
+import androidx.compose.material.icons.outlined.AddCircle
+import androidx.compose.material.icons.outlined.FavoriteBorder
+import androidx.compose.material.icons.outlined.Settings
+import androidx.compose.material.icons.outlined.ShoppingCart
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -82,6 +92,8 @@ fun DashBoardScreen(navController: NavController) {
                         searchState.value = it
                     }, modifier = Modifier
                         .fillMaxHeight()
+                        .wrapContentHeight()
+                        .padding(start = 20.dp, end = 16.dp)
                         .weight(1f), singleLine = true, decorationBox = { innerTextField ->
                         if (searchState.value.isEmpty()) {
                             Text(
@@ -117,9 +129,7 @@ fun DashBoardScreen(navController: NavController) {
                 columns = GridCells.Fixed(2),
                 modifier = Modifier
                     .weight(1f)
-                    .padding(start = 16.dp),
-                verticalArrangement = Arrangement.spacedBy(5.dp),
-                horizontalArrangement = Arrangement.spacedBy(5.dp)
+                    .padding(start = 16.dp), contentPadding = PaddingValues(bottom = 30.dp)
             ) {
                 item {
                     ProductView(
@@ -175,8 +185,56 @@ fun DashBoardScreen(navController: NavController) {
                         navController = navController
                     )
                 }
+                item {
+                    Spacer(modifier = Modifier.height(40.dp)) // Ensure last item is fully visible
+                }
 
             }
+        }
+
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(
+                    color = Color.White,
+                    shape = RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp)
+                )
+                .padding(10.dp, 10.dp, 10.dp, 10.dp)
+                .align(Alignment.BottomEnd)
+        ) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceEvenly,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Icon(
+                    imageVector = Icons.Outlined.AccountCircle,
+                    contentDescription = null,
+                    modifier = Modifier.size(30.dp)
+                )
+                Icon(
+                    imageVector = Icons.Outlined.ShoppingCart,
+                    contentDescription = null,
+                    modifier = Modifier.size(30.dp)
+                )
+                Icon(
+                    imageVector = Icons.Outlined.AddCircle,
+                    contentDescription = null,
+                    modifier = Modifier.size(30.dp),
+                    tint = Color(android.graphics.Color.parseColor("#509790"))
+                )
+                Icon(
+                    imageVector = Icons.Outlined.FavoriteBorder,
+                    contentDescription = null,
+                    modifier = Modifier.size(30.dp)
+                )
+                Icon(
+                    imageVector = Icons.Outlined.Settings,
+                    contentDescription = null,
+                    modifier = Modifier.size(30.dp)
+                )
+            }
+
         }
     }
 
