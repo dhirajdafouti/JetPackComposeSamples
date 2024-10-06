@@ -7,6 +7,7 @@ import androidx.navigation.compose.rememberNavController
 import com.android.sampleapplication1.Screen
 import com.android.sampleapplication1.screens.DashBoardScreen
 import com.android.sampleapplication1.screens.LandingScreen
+import com.android.sampleapplication1.screens.ProductScreen
 
 @Composable
 fun Navigation(){
@@ -19,7 +20,7 @@ fun Navigation(){
            DashBoardScreen(navController)
         }
         composable(route = Screen.Product.route) {
-
+          ProductScreen(navController)
         }
     }
 }
