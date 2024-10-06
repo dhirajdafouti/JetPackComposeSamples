@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -23,7 +24,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.input.pointer.motionEventSpy
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -124,7 +127,7 @@ fun ProductScreen(navController: NavController) {
             )
             Row(
                 modifier = Modifier
-                    .padding(top = 40.dp, start = 30.dp, end = 20.dp)
+                    .padding(top = 80.dp, start = 30.dp, end = 20.dp)
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.Start,
                 verticalAlignment = Alignment.CenterVertically
@@ -134,9 +137,63 @@ fun ProductScreen(navController: NavController) {
                 ProductSize("L")
             }
 
-        }
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 80.dp, start = 30.dp, end = 20.dp)
+                    .background(color = Color.White, shape = RoundedCornerShape(10.dp)),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        text = "Price",
+                        modifier = Modifier.wrapContentWidth(),
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight.Medium
+                    )
+                    Text(
+                        text = "$250euros",
+                        modifier = Modifier.wrapContentWidth(),
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight.Black
+                    )
 
+                }
+
+
+                Row(
+                    modifier = Modifier
+                        .background(
+                            color =
+                            Color(android.graphics.Color.parseColor("#509790")),
+                            shape = RoundedCornerShape(40.dp)
+                        )
+                        .padding(20.dp), verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Image(
+                        painter = painterResource(
+                            R.drawable.ic_bag
+                        ),
+                        contentDescription = null,
+                        modifier = Modifier.size(24.dp),
+                        colorFilter = ColorFilter.tint(color = Color.White)
+                    )
+                    Text(
+                        text = "Add to cart",
+                        modifier = Modifier
+                            .wrapContentWidth()
+                            .padding(start = 5.dp),
+                        textAlign = TextAlign.Center,
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight.Medium,
+                        color = Color.White
+                    )
+                }
+
+            }
+        }
     }
+
 
 }
 
