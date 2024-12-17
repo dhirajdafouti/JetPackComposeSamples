@@ -31,6 +31,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.jetnews.R
@@ -49,10 +51,12 @@ fun AppNavRail(
             Icon(
                 painterResource(R.drawable.ic_jetnews_logo),
                 null,
-                Modifier.padding(vertical = 12.dp),
-                tint = MaterialTheme.colorScheme.primary
+                Modifier.padding(vertical = 15.dp).semantics { contentDescription = "Jetnews Logo" },
+                tint = MaterialTheme.colorScheme.onSurfaceVariant
             )
         },
+        containerColor = MaterialTheme.colorScheme.onSecondary,
+        contentColor = MaterialTheme.colorScheme.background,
         modifier = modifier
     ) {
         Spacer(Modifier.weight(1f))
@@ -80,7 +84,7 @@ fun AppNavRail(
 fun PreviewAppNavRail() {
     JetnewsTheme {
         AppNavRail(
-            currentRoute = JetnewsDestinations.HOME_ROUTE,
+            currentRoute = JetnewsDestinations.INTERESTS_ROUTE,
             navigateToHome = {},
             navigateToInterests = {},
         )

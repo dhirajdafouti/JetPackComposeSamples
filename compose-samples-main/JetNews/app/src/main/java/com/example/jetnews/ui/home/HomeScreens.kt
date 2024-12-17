@@ -578,17 +578,6 @@ private fun PostListHistorySection(
 }
 
 /**
- * Full-width divider with padding for [PostList]
- */
-@Composable
-private fun PostListDivider() {
-    Divider(
-        modifier = Modifier.padding(horizontal = 14.dp),
-        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.08f)
-    )
-}
-
-/**
  * Expanded search UI - includes support for enter-to-send on the search field
  */
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalComposeUiApi::class)
@@ -624,6 +613,17 @@ private fun HomeSearch(
                 keyboardController?.hide()
             }
         )
+    )
+}
+
+/**
+ * Full-width divider with padding for [PostList]
+ */
+@Composable
+private fun PostListDivider() {
+    Divider(
+        modifier = Modifier.padding(horizontal = 14.dp),
+        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.08f)
     )
 }
 

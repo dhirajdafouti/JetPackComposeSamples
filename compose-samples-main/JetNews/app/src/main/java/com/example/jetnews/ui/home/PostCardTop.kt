@@ -57,7 +57,7 @@ fun PostCardTop(post: Post, modifier: Modifier = Modifier) {
             painter = painterResource(post.imageId),
             contentDescription = null, // decorative
             modifier = imageModifier,
-            contentScale = ContentScale.Crop
+            contentScale = ContentScale.FillBounds
         )
         Spacer(Modifier.height(16.dp))
 

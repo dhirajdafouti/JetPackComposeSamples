@@ -53,6 +53,8 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -60,6 +62,7 @@ import com.example.jetnews.R
 import com.example.jetnews.data.Result
 import com.example.jetnews.data.posts.impl.BlockingFakePostsRepository
 import com.example.jetnews.data.posts.impl.post3
+import com.example.jetnews.data.posts.impl.post4
 import com.example.jetnews.model.Post
 import com.example.jetnews.ui.theme.JetnewsTheme
 import com.example.jetnews.ui.utils.BookmarkButton
@@ -105,7 +108,8 @@ fun ArticleScreen(
                         Icon(
                             imageVector = Icons.Filled.ArrowBack,
                             contentDescription = stringResource(R.string.cd_navigate_up),
-                            tint = MaterialTheme.colorScheme.primary
+                            tint = MaterialTheme.colorScheme.primary,
+                            modifier = Modifier.semantics { contentDescription = "Navigate back" }
                         )
                     }
                 }
@@ -240,13 +244,13 @@ fun sharePost(post: Post, context: Context) {
 }
 
 @Preview("Article screen")
-@Preview("Article screen (dark)", uiMode = UI_MODE_NIGHT_YES)
-@Preview("Article screen (big font)", fontScale = 1.5f)
+//@Preview("Article screen (dark)", uiMode = UI_MODE_NIGHT_YES)
+//@Preview("Article screen (big font)", fontScale = 1.5f)
 @Composable
 fun PreviewArticleDrawer() {
     JetnewsTheme {
         val post = runBlocking {
-            (BlockingFakePostsRepository().getPost(post3.id) as Result.Success).data
+            (BlockingFakePostsRepository().getPost(post4.id) as Result.Success).data
         }
         ArticleScreen(post, false, {}, false, {})
     }

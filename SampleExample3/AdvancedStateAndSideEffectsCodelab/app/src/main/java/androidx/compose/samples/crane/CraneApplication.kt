@@ -24,7 +24,7 @@ import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
 class CraneApplication : Application(), ImageLoaderFactory {
-
+//https://developer.android.com/codelabs/jetpack-compose-advanced-state-side-effects#1
     /**
      * Create the singleton [ImageLoader].
      * This is used by [rememberImagePainter] to load images in the app.

@@ -75,11 +75,12 @@ android {
         excludes += "/META-INF/AL2.0"
         excludes += "/META-INF/LGPL2.1"
     }
+    kotlinOptions {
+        jvmTarget = "17" // Or "21" to match the Java version
+    }
 }
 
-kotlin {
-    jvmToolchain(17)
-}
+
 
 dependencies {
     val composeBom = platform(libs.androidx.compose.bom)
