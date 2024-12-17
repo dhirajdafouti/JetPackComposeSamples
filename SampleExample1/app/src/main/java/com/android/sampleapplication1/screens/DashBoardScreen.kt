@@ -42,6 +42,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -196,42 +197,41 @@ fun DashBoardScreen(navController: NavController) {
             modifier = Modifier
                 .fillMaxWidth()
                 .background(
-                    color = Color.White,
-                    shape = RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp)
-                )
-                .padding(10.dp, 10.dp, 10.dp, 10.dp)
+                    color = Color.White, shape = RectangleShape
+                ).padding(start = 2.dp, top = 10.dp, bottom = 10.dp, end = 2.dp)
                 .align(Alignment.BottomEnd)
+
         ) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceEvenly,
+                horizontalArrangement = Arrangement.SpaceAround,
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Icon(
                     imageVector = Icons.Outlined.AccountCircle,
                     contentDescription = null,
-                    modifier = Modifier.size(30.dp)
+                    modifier = Modifier.size(50.dp)
                 )
                 Icon(
                     imageVector = Icons.Outlined.ShoppingCart,
                     contentDescription = null,
-                    modifier = Modifier.size(30.dp)
+                    modifier = Modifier.size(50.dp)
                 )
                 Icon(
                     imageVector = Icons.Outlined.AddCircle,
                     contentDescription = null,
-                    modifier = Modifier.size(30.dp),
+                    modifier = Modifier.size(50.dp),
                     tint = Color(android.graphics.Color.parseColor("#509790"))
                 )
                 Icon(
                     imageVector = Icons.Outlined.FavoriteBorder,
                     contentDescription = null,
-                    modifier = Modifier.size(30.dp)
+                    modifier = Modifier.size(50.dp)
                 )
                 Icon(
                     imageVector = Icons.Outlined.Settings,
                     contentDescription = null,
-                    modifier = Modifier.size(30.dp)
+                    modifier = Modifier.size(50.dp)
                 )
             }
 
