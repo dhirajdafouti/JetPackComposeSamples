@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.android.sampleapplication1.screens.TextFieldComposable
+import com.android.sampleapplication1.screens.UiComponenets
 import com.android.sampleapplication1.ui.theme.SampleApplication1Theme
 
 class MainActivity : ComponentActivity() {
@@ -14,8 +14,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             SampleApplication1Theme {
 
-                TextFieldComposable()
-
+                //  TextFieldComposable()
+                UiComponenets()
             }
         }
     }
