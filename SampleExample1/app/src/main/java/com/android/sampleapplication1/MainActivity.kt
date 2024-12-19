@@ -4,9 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material3.Text
-import com.android.sampleapplication1.screens.DetailedDrawerExample
+import com.android.sampleapplication1.screens.BottomSheetsComposable
+import com.android.sampleapplication1.screens.BottomSheetsScaffoldComposable
 import com.android.sampleapplication1.screens.NavigationDrawerCompose
 import com.android.sampleapplication1.ui.theme.SampleApplication1Theme
 
@@ -16,14 +15,16 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             SampleApplication1Theme {
-                NavigationDrawerCompose()
-                DetailedDrawerExample {
-                    LazyColumn {
-                        items(100) {
-                            Text("Item $it")
-                        }
-                    }
-                }
+               // NavigationDrawerCompose()
+//                DetailedDrawerExample {
+//                    LazyColumn {
+//                        items(100) {
+//                            Text("Item $it")
+//                        }
+//                    }
+//                }
+              //  BottomSheetsComposable()
+                BottomSheetsScaffoldComposable()
             }
 
         }
